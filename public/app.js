@@ -7,7 +7,10 @@ let tab = location.hash.slice(1) || 'rounds';
 let data, S, selRound = null;
 
 async function load() {
-  data = await (await fetch('/api/data')).json();
+  // Con servidor (local / Vercel) usa la API; en GitHub Pages cae al archivo data.json publicado
+  let r = await fetch('api/data').catch(() => null);
+  if (!r || !r.ok || !(r.headers.get('content-type') || '').includes('json')) r = await fetch('data.json?t=' + Date.now());
+  data = await r.json();
   S = Stats.compute(data);
   document.getElementById('title').textContent = data.name;
   document.title = data.name;

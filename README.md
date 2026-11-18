@@ -10,6 +10,18 @@ Vista pública en `/` y panel de administración en `/admin.html`.
 
 Contraseña por defecto en local: `admin123`. Los datos quedan en `data/` (no se sube a git).
 
+## Publicar gratis en GitHub Pages (sin tarjeta, sin número de teléfono extranjero)
+
+Aquí el administrador trabaja en su PC y el público ve un sitio estático.
+
+1. Carga equipos, calendario y resultados con `node server.js` → `http://localhost:3000/admin.html`.
+2. Haz doble clic en **`publicar.cmd`** (o `node build-static.js` y luego `git add docs`, `git commit`, `git push`).
+   Esto genera la carpeta `docs/` (solo lectura, sin el panel de admin) y la sube a GitHub.
+3. Una sola vez, en GitHub: repositorio → **Settings → Pages** → Source: *Deploy from a branch* → rama `main`, carpeta `/docs`.
+4. El enlace será `https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/`. Cada vez que cambies resultados, repite el paso 2.
+
+Ojo: el repositorio debe ser **público** (GitHub Pages gratis lo exige y GitHub en Cuba solo permite repos públicos), y `docs/data.json` queda visible para cualquiera. La contraseña de admin no se sube nunca.
+
 ## Publicar gratis en Vercel
 
 La carpeta `api/` son funciones de Vercel y `public/` la página. Los datos viven en Upstash Redis (plan gratuito).
