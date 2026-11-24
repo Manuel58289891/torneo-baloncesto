@@ -27,7 +27,11 @@
           "id": "dn71do6l",
           "name": "Javier",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 21,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 3
         },
         {
           "id": "taxii9p8",
@@ -46,13 +50,21 @@
           "id": "va5kpxsh",
           "name": "Ernesto",
           "number": "1",
-          "photo": "uploads/dbeefe233f58d103f96f.jpg"
+          "photo": "uploads/dbeefe233f58d103f96f.jpg",
+          "basePts": 14,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 5
         },
         {
           "id": "dabriqs1",
           "name": "Lusley",
           "number": "2",
-          "photo": "uploads/04ed10342bbbceddfd8b.jpg"
+          "photo": "uploads/04ed10342bbbceddfd8b.jpg",
+          "basePts": 24,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 5
         },
         {
           "id": "kb9nq5a2",
@@ -70,7 +82,11 @@
           "id": "052xa6oi",
           "name": "Yosbel",
           "number": "5",
-          "photo": "uploads/a4d4477601cf26422a8d.jpg"
+          "photo": "uploads/a4d4477601cf26422a8d.jpg",
+          "basePts": 22,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 5
         },
         {
           "id": "iblg12sx",
@@ -126,7 +142,11 @@
           "id": "ofv6o90r",
           "name": "Wilman",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 30,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 3
         },
         {
           "id": "lv2i0swu",
@@ -163,7 +183,11 @@
           "id": "ws6anzze",
           "name": "Alex",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 29,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 4
         },
         {
           "id": "vl4te3m2",
@@ -181,7 +205,11 @@
           "id": "ydb5ndt8",
           "name": "Ruben",
           "number": "5",
-          "photo": ""
+          "photo": "",
+          "basePts": 16,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 4
         }
       ],
       "logo": "uploads/072ac164eed14c9215be.png"
@@ -194,7 +222,11 @@
           "id": "js0mzg42",
           "name": "Yoenis",
           "number": "1",
-          "photo": ""
+          "photo": "",
+          "basePts": 11,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 2
         },
         {
           "id": "drmkx78z",
@@ -222,37 +254,6 @@
       "name": "Draft Guira",
       "players": [
         {
-          "id": "ill2fwl9",
-          "name": "Manuel Alejandro",
-          "number": "11",
-          "photo": ""
-        },
-        {
-          "id": "dapdvhp5",
-          "name": "Reinier",
-          "number": "6",
-          "photo": ""
-        },
-        {
-          "id": "artvss6v",
-          "name": "Brayan",
-          "number": "23",
-          "photo": ""
-        },
-        {
-          "id": "qmqb2fpz",
-          "name": "Yoelito",
-          "number": "3",
-          "photo": ""
-        }
-      ],
-      "logo": "uploads/65add8f2cfbe90a3d59f.png"
-    },
-    {
-      "id": "yhk71egd",
-      "name": "Guira Hoops",
-      "players": [
-        {
           "id": "wo4kgt0l",
           "name": "Erick",
           "number": "1",
@@ -274,7 +275,11 @@
           "id": "d16e6tcy",
           "name": "Carlucho",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 25,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 3
         },
         {
           "id": "hj8zrce0",
@@ -282,8 +287,773 @@
           "number": "23",
           "photo": ""
         }
+      ],
+      "logo": "uploads/65add8f2cfbe90a3d59f.png"
+    },
+    {
+      "id": "yhk71egd",
+      "name": "Guira Hoops",
+      "players": [
+        {
+          "id": "ill2fwl9",
+          "name": "Manuel Alejandro",
+          "number": "11",
+          "photo": "",
+          "basePts": 16,
+          "baseReb": 0,
+          "baseAst": 0,
+          "baseGp": 2
+        },
+        {
+          "id": "dapdvhp5",
+          "name": "Reinier",
+          "number": "6",
+          "photo": ""
+        },
+        {
+          "id": "artvss6v",
+          "name": "Brayan",
+          "number": "23",
+          "photo": ""
+        },
+        {
+          "id": "qmqb2fpz",
+          "name": "Yoelito",
+          "number": "3",
+          "photo": ""
+        }
       ]
     }
   ],
-  "games": []
+  "games": [
+    {
+      "id": "g5",
+      "round": 1,
+      "home": "dsl71rdn",
+      "away": "5yhpq2ci",
+      "date": "2026-11-18",
+      "time": "16:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 15,
+      "awayScore": 10,
+      "stats": []
+    },
+    {
+      "id": "g6",
+      "round": 1,
+      "home": "rotjz5lj",
+      "away": "wvms3v4h",
+      "date": "2026-11-18",
+      "time": "16:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 13,
+      "awayScore": 11,
+      "stats": []
+    },
+    {
+      "id": "g7",
+      "round": 1,
+      "home": "fim1wmka",
+      "away": "dsl71rdn",
+      "date": "2026-11-18",
+      "time": "17:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 16,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g8",
+      "round": 1,
+      "home": "5yhpq2ci",
+      "away": "rotjz5lj",
+      "date": "2026-11-18",
+      "time": "17:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 8,
+      "awayScore": 20,
+      "stats": []
+    },
+    {
+      "id": "g9",
+      "round": 1,
+      "home": "wvms3v4h",
+      "away": "fim1wmka",
+      "date": "2026-11-18",
+      "time": "17:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 5,
+      "awayScore": 12,
+      "stats": []
+    },
+    {
+      "id": "g10",
+      "round": 1,
+      "home": "dsl71rdn",
+      "away": "rotjz5lj",
+      "date": "2026-11-18",
+      "time": "18:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 16,
+      "awayScore": 12,
+      "stats": []
+    },
+    {
+      "id": "g11",
+      "round": 2,
+      "home": "dsl71rdn",
+      "away": "wvms3v4h",
+      "date": "2026-11-20",
+      "time": "16:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 16,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g12",
+      "round": 2,
+      "home": "yhk71egd",
+      "away": "16s7yne2",
+      "date": "2026-11-20",
+      "time": "16:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 14,
+      "awayScore": 15,
+      "stats": []
+    },
+    {
+      "id": "g13",
+      "round": 2,
+      "home": "fim1wmka",
+      "away": "754l7vzz",
+      "date": "2026-11-20",
+      "time": "17:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 21,
+      "awayScore": 8,
+      "stats": []
+    },
+    {
+      "id": "g14",
+      "round": 2,
+      "home": "wvms3v4h",
+      "away": "16s7yne2",
+      "date": "2026-11-20",
+      "time": "17:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 16,
+      "awayScore": 19,
+      "stats": []
+    },
+    {
+      "id": "g15",
+      "round": 2,
+      "home": "dsl71rdn",
+      "away": "yhk71egd",
+      "date": "2026-11-20",
+      "time": "17:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 16,
+      "awayScore": 11,
+      "stats": []
+    },
+    {
+      "id": "g16",
+      "round": 2,
+      "home": "16s7yne2",
+      "away": "754l7vzz",
+      "date": "2026-11-20",
+      "time": "18:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 11,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g17",
+      "round": 3,
+      "home": "dsl71rdn",
+      "away": "5yhpq2ci",
+      "date": "2026-11-23",
+      "time": "16:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 12,
+      "awayScore": 8,
+      "stats": []
+    },
+    {
+      "id": "g18",
+      "round": 3,
+      "home": "rotjz5lj",
+      "away": "wvms3v4h",
+      "date": "2026-11-23",
+      "time": "16:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 21,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g19",
+      "round": 3,
+      "home": "dsl71rdn",
+      "away": "fim1wmka",
+      "date": "2026-11-23",
+      "time": "17:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 15,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g20",
+      "round": 3,
+      "home": "5yhpq2ci",
+      "away": "754l7vzz",
+      "date": "2026-11-23",
+      "time": "17:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 14,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g21",
+      "round": 3,
+      "home": "rotjz5lj",
+      "away": "fim1wmka",
+      "date": "2026-11-23",
+      "time": "17:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 9,
+      "awayScore": 17,
+      "stats": []
+    },
+    {
+      "id": "g22",
+      "round": 3,
+      "home": "wvms3v4h",
+      "away": "754l7vzz",
+      "date": "2026-11-23",
+      "time": "18:10",
+      "venue": "",
+      "played": true,
+      "homeScore": 0,
+      "awayScore": 21,
+      "stats": []
+    },
+    {
+      "id": "g23",
+      "round": 4,
+      "home": "rotjz5lj",
+      "away": "fim1wmka",
+      "date": "2026-11-25",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g24",
+      "round": 4,
+      "home": "wvms3v4h",
+      "away": "yhk71egd",
+      "date": "2026-11-25",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g25",
+      "round": 4,
+      "home": "fim1wmka",
+      "away": "16s7yne2",
+      "date": "2026-11-25",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g26",
+      "round": 4,
+      "home": "yhk71egd",
+      "away": "754l7vzz",
+      "date": "2026-11-25",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g27",
+      "round": 4,
+      "home": "rotjz5lj",
+      "away": "16s7yne2",
+      "date": "2026-11-25",
+      "time": "17:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g28",
+      "round": 4,
+      "home": "wvms3v4h",
+      "away": "754l7vzz",
+      "date": "2026-11-25",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g29",
+      "round": 5,
+      "home": "dsl71rdn",
+      "away": "yhk71egd",
+      "date": "2026-11-27",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g30",
+      "round": 5,
+      "home": "5yhpq2ci",
+      "away": "fim1wmka",
+      "date": "2026-11-27",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g31",
+      "round": 5,
+      "home": "dsl71rdn",
+      "away": "16s7yne2",
+      "date": "2026-11-27",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g32",
+      "round": 5,
+      "home": "5yhpq2ci",
+      "away": "yhk71egd",
+      "date": "2026-11-27",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g33",
+      "round": 5,
+      "home": "fim1wmka",
+      "away": "754l7vzz",
+      "date": "2026-11-27",
+      "time": "17:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 21,
+      "awayScore": 15,
+      "stats": []
+    },
+    {
+      "id": "g34",
+      "round": 5,
+      "home": "yhk71egd",
+      "away": "16s7yne2",
+      "date": "2026-11-27",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g35",
+      "round": 6,
+      "home": "dsl71rdn",
+      "away": "wvms3v4h",
+      "date": "2026-11-30",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g36",
+      "round": 6,
+      "home": "5yhpq2ci",
+      "away": "16s7yne2",
+      "date": "2026-11-30",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g37",
+      "round": 6,
+      "home": "dsl71rdn",
+      "away": "rotjz5lj",
+      "date": "2026-11-30",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g38",
+      "round": 6,
+      "home": "5yhpq2ci",
+      "away": "wvms3v4h",
+      "date": "2026-11-30",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g39",
+      "round": 6,
+      "home": "rotjz5lj",
+      "away": "yhk71egd",
+      "date": "2026-11-30",
+      "time": "17:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g40",
+      "round": 6,
+      "home": "wvms3v4h",
+      "away": "16s7yne2",
+      "date": "2026-11-30",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g41",
+      "round": 7,
+      "home": "5yhpq2ci",
+      "away": "rotjz5lj",
+      "date": "2026-12-02",
+      "time": "16:30",
+      "venue": "",
+      "played": true,
+      "homeScore": 13,
+      "awayScore": 15,
+      "stats": []
+    },
+    {
+      "id": "g42",
+      "round": 7,
+      "home": "fim1wmka",
+      "away": "yhk71egd",
+      "date": "2026-12-02",
+      "time": "16:50",
+      "venue": "",
+      "played": true,
+      "homeScore": 14,
+      "awayScore": 10,
+      "stats": []
+    },
+    {
+      "id": "g43",
+      "round": 7,
+      "home": "rotjz5lj",
+      "away": "754l7vzz",
+      "date": "2026-12-02",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g44",
+      "round": 7,
+      "home": "5yhpq2ci",
+      "away": "fim1wmka",
+      "date": "2026-12-02",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g45",
+      "round": 7,
+      "home": "16s7yne2",
+      "away": "754l7vzz",
+      "date": "2026-12-02",
+      "time": "17:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g46",
+      "round": 7,
+      "home": "5yhpq2ci",
+      "away": "yhk71egd",
+      "date": "2026-12-02",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g47",
+      "round": 8,
+      "home": "wvms3v4h",
+      "away": "fim1wmka",
+      "date": "2026-12-04",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g48",
+      "round": 8,
+      "home": "dsl71rdn",
+      "away": "16s7yne2",
+      "date": "2026-12-04",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g49",
+      "round": 8,
+      "home": "wvms3v4h",
+      "away": "yhk71egd",
+      "date": "2026-12-04",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g50",
+      "round": 8,
+      "home": "fim1wmka",
+      "away": "16s7yne2",
+      "date": "2026-12-04",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g51",
+      "round": 8,
+      "home": "dsl71rdn",
+      "away": "754l7vzz",
+      "date": "2026-12-04",
+      "time": "17:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g52",
+      "round": 8,
+      "home": "fim1wmka",
+      "away": "yhk71egd",
+      "date": "2026-12-04",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g53",
+      "round": 9,
+      "home": "rotjz5lj",
+      "away": "yhk71egd",
+      "date": "2026-12-07",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g54",
+      "round": 9,
+      "home": "5yhpq2ci",
+      "away": "754l7vzz",
+      "date": "2026-12-07",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g55",
+      "round": 9,
+      "home": "rotjz5lj",
+      "away": "16s7yne2",
+      "date": "2026-12-07",
+      "time": "17:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g56",
+      "round": 9,
+      "home": "yhk71egd",
+      "away": "754l7vzz",
+      "date": "2026-12-07",
+      "time": "17:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g57",
+      "round": 9,
+      "home": "5yhpq2ci",
+      "away": "16s7yne2",
+      "date": "2026-12-07",
+      "time": "17:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g58",
+      "round": 9,
+      "home": "rotjz5lj",
+      "away": "754l7vzz",
+      "date": "2026-12-07",
+      "time": "18:10",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g59",
+      "round": 10,
+      "home": "dsl71rdn",
+      "away": "754l7vzz",
+      "date": "2026-12-09",
+      "time": "16:30",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    },
+    {
+      "id": "g60",
+      "round": 10,
+      "home": "5yhpq2ci",
+      "away": "wvms3v4h",
+      "date": "2026-12-09",
+      "time": "16:50",
+      "venue": "",
+      "played": false,
+      "homeScore": 0,
+      "awayScore": 0,
+      "stats": []
+    }
+  ],
+  "rev": 3
 }
