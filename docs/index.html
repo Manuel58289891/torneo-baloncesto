@@ -3,15 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b24">
   <title>Torneo de Baloncesto</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
-<body>
-  <header class="top">
-    <h1>🏀 <span id="title">Torneo</span></h1>
+<body class="theme">
+  <div class="bg-lights" aria-hidden="true"></div>
+  <header class="hero">
+    <div class="ball" aria-hidden="true">🏀</div>
+    <div>
+      <p class="kicker">Torneo oficial · 3 vs 3</p>
+      <h1 id="title">Torneo</h1>
+      <p class="tag">Resultados · Balance · Anotadores · MVPs</p>
+    </div>
   </header>
   <nav class="tabs" id="tabs"></nav>
   <main id="view"></main>
+  <dialog id="pcard" class="pcard"></dialog>
+  <footer>
+    <div class="foot">🏀 Sigue cada jornada · Que gane el mejor</div>
+  </footer>
   <script src="stats.js"></script>
   <script src="app.js"></script>
 </body>

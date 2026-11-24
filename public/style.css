@@ -132,3 +132,44 @@ th.sorted, td.sorted { background: #fff6ee; }
   .sched td:first-child select { width: auto; max-width: 44%; }
   .sched td .btn { width: 100%; }
 }
+
+/* Acumulados */
+.basetbl input { width: 64px; padding: 5px; text-align: center; }
+.basetbl td { padding: 4px 6px; }
+
+/* Anotadores: cara + equipo, y tarjeta del jugador */
+.pl { cursor: pointer; }
+.prow { cursor: pointer; }
+.prow:hover td { background: #fff6ee; }
+.pcell { display: flex; align-items: center; gap: 10px; }
+.av.face { width: 42px; height: 42px; flex: none; }
+.pinfo { min-width: 0; }
+.pnm { font-weight: 600; }
+.pteam { font-size: .8rem; color: var(--muted); }
+.pteam .av { width: 16px; height: 16px; }
+.pteam .lbl { gap: 5px; }
+input[type=search] { padding: 7px 9px; border: 1px solid #cfc9bd; border-radius: 6px; background: #fff; max-width: 100%; font: inherit; }
+dialog.pcard { width: min(380px, 94vw); padding: 0; overflow: hidden; border-radius: 16px; }
+.pc-photo { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(135deg, #2a2a33, #16161d); display: flex; align-items: center; justify-content: center; }
+.pc-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pc-photo span { font-size: 4.5rem; font-weight: 800; color: #6b6b76; }
+.pc-x { position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: #000a; color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.pc-body { padding: 16px 18px 20px; max-height: 50vh; overflow: auto; }
+.pc-body h2 { margin: 0 0 6px; font-size: 1.4rem; }
+.pc-sub { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.pc-sub .av { width: 26px; height: 26px; }
+.pc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+.pc-stats div { background: #f6f3ee; border-radius: 10px; padding: 8px 4px; text-align: center; }
+.pc-stats b { display: block; font-size: 1.25rem; }
+.pc-stats span { font-size: .72rem; color: var(--muted); text-transform: uppercase; }
+.pc-body h3 { margin: 0 0 6px; font-size: .95rem; }
+.pc-body table { font-size: .85rem; }
+@media (max-width: 600px) { .av.face { width: 38px; height: 38px; } .scorers .pteam .tn { display: inline; } .prow td { padding: 8px 3px; } }
+@media (max-width: 600px) {
+  .scorers td.l { white-space: normal; }
+  .pinfo { max-width: 150px; }
+  .pteam { line-height: 1.2; }
+  .pteam .lbl { align-items: flex-start; }
+  .pteam .lbl .av { margin-top: 1px; }
+  .scorers th, .scorers td { padding-left: 2px; padding-right: 2px; }
+}

@@ -27,7 +27,9 @@
           "id": "dn71do6l",
           "name": "Javier",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 21,
+          "baseGp": 0
         },
         {
           "id": "taxii9p8",
@@ -45,13 +47,17 @@
           "id": "va5kpxsh",
           "name": "Ernesto",
           "number": "1",
-          "photo": "uploads/dbeefe233f58d103f96f.jpg"
+          "photo": "uploads/dbeefe233f58d103f96f.jpg",
+          "basePts": 14,
+          "baseGp": 0
         },
         {
           "id": "dabriqs1",
           "name": "Lusley",
           "number": "2",
-          "photo": "uploads/04ed10342bbbceddfd8b.jpg"
+          "photo": "uploads/04ed10342bbbceddfd8b.jpg",
+          "basePts": 24,
+          "baseGp": 0
         },
         {
           "id": "kb9nq5a2",
@@ -69,7 +75,9 @@
           "id": "052xa6oi",
           "name": "Yosbel",
           "number": "5",
-          "photo": "uploads/a4d4477601cf26422a8d.jpg"
+          "photo": "uploads/a4d4477601cf26422a8d.jpg",
+          "basePts": 22,
+          "baseGp": 0
         },
         {
           "id": "iblg12sx",
@@ -123,7 +131,9 @@
           "id": "ofv6o90r",
           "name": "Wilman",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 30,
+          "baseGp": 0
         },
         {
           "id": "lv2i0swu",
@@ -159,7 +169,9 @@
           "id": "ws6anzze",
           "name": "Alex",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 29,
+          "baseGp": 0
         },
         {
           "id": "vl4te3m2",
@@ -177,7 +189,9 @@
           "id": "ydb5ndt8",
           "name": "Ruben",
           "number": "5",
-          "photo": ""
+          "photo": "",
+          "basePts": 16,
+          "baseGp": 0
         }
       ]
     },
@@ -189,7 +203,9 @@
           "id": "js0mzg42",
           "name": "Yoenis",
           "number": "1",
-          "photo": ""
+          "photo": "",
+          "basePts": 11,
+          "baseGp": 0
         },
         {
           "id": "drmkx78z",
@@ -237,7 +253,9 @@
           "id": "d16e6tcy",
           "name": "Carlucho",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 25,
+          "baseGp": 0
         },
         {
           "id": "hj8zrce0",
@@ -255,7 +273,9 @@
           "id": "ill2fwl9",
           "name": "Manuel Alejandro",
           "number": "11",
-          "photo": ""
+          "photo": "",
+          "basePts": 16,
+          "baseGp": 0
         },
         {
           "id": "dapdvhp5",

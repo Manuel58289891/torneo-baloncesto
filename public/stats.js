@@ -63,6 +63,12 @@
 
     // Máximos anotadores
     const sc = new Map();
+    // Acumulado previo cargado a mano (jugador.basePts / baseGp), para torneos que empezaron sin registrar por partido
+    for (const t of data.teams) for (const p of t.players || []) {
+      if (+p.basePts > 0 || +p.baseReb > 0 || +p.baseAst > 0 || +p.baseGp > 0) {
+        sc.set(p.id, { playerId: p.id, teamId: t.id, pts: +p.basePts || 0, reb: +p.baseReb || 0, ast: +p.baseAst || 0, gp: +p.baseGp || 0, high: 0 });
+      }
+    }
     for (const g of data.games) {
       if (!g.played) continue;
       for (const s of g.stats || []) {

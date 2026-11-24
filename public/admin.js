@@ -23,7 +23,7 @@ const uiAlert = (msg) => uiAsk({ msg, cancel: false });
 
 let token = sessionStorage.getItem('token');
 let data, tab = 'teams';
-const TABS = [['teams', 'Equipos y jugadores'], ['schedule', 'Calendario'], ['results', 'Resultados'], ['settings', 'Torneo']];
+const TABS = [['teams', 'Equipos y jugadores'], ['schedule', 'Calendario'], ['results', 'Resultados'], ['base', 'Acumulados'], ['settings', 'Torneo']];
 
 function toast(msg) {
   const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
@@ -70,7 +70,7 @@ function showLogin() {
 function render() {
   $('#tabs').innerHTML = TABS.map(([k, l]) => `<button class="${k === tab ? 'active' : ''}" data-t="${k}">${l}</button>`).join('');
   document.querySelectorAll('#tabs button').forEach((b) => b.onclick = () => { tab = b.dataset.t; render(); });
-  ({ teams: viewTeams, schedule: viewSchedule, results: viewResults, settings: viewSettings }[tab])();
+  ({ teams: viewTeams, schedule: viewSchedule, results: viewResults, base: viewBase, settings: viewSettings }[tab])();
 }
 const team = (id) => data.teams.find((t) => t.id === id);
 const tname = (id) => esc(team(id)?.name ?? '?');
@@ -354,6 +354,29 @@ function openResult(id) {
     if (stats.length && (sumH > hs || sumA > as) && !await uiConfirm('Los puntos de los jugadores superan el marcador del equipo. ¿Guardar de todos modos?')) return;
     Object.assign(g, { played: true, homeScore: hs, awayScore: as, stats });
     if (await save()) { dlg.close(); render(); }
+  };
+}
+
+// ---------- Acumulados (carga rápida) ----------
+function viewBase() {
+  const num = (v) => (v ? v : '');
+  $('#view').innerHTML = `<div class="card"><h2>Acumulados por jugador</h2>
+    <p class="muted">Carga de golpe lo que cada jugador lleva hasta hoy: <b>partidos jugados (PJ)</b>, puntos, rebotes y asistencias.
+    Cuando registres partidos con estadísticas por jugador, se <b>suman</b> a estos acumulados. El promedio se calcula con los partidos que el jugador realmente jugó; si dejas PJ vacío, no se calcula promedio.</p>
+    <div class="tablewrap"><table class="basetbl">
+    <tr><th class="l">Jugador</th><th>PJ</th><th>PTS</th><th>REB</th><th>AST</th></tr>
+    ${data.teams.map((t) => `<tr><td class="l" colspan="5"><b>${esc(t.name)}</b></td></tr>` + t.players.map((p) => `<tr data-t="${t.id}" data-p="${p.id}">
+      <td class="l">${esc(p.name)}</td>
+      <td><input type="number" min="0" data-k="baseGp" value="${num(p.baseGp)}"></td><td><input type="number" min="0" data-k="basePts" value="${num(p.basePts)}"></td>
+      <td><input type="number" min="0" data-k="baseReb" value="${num(p.baseReb)}"></td><td><input type="number" min="0" data-k="baseAst" value="${num(p.baseAst)}"></td></tr>`).join('')).join('')}
+    </table></div>
+    <div class="row" style="margin-top:12px"><button class="btn" id="saveBase">Guardar acumulados</button></div></div>`;
+  $('#saveBase').onclick = async () => {
+    document.querySelectorAll('.basetbl tr[data-p]').forEach((tr) => {
+      const p = team(tr.dataset.t).players.find((x) => x.id === tr.dataset.p);
+      tr.querySelectorAll('input').forEach((i) => { p[i.dataset.k] = Math.max(0, parseInt(i.value, 10) || 0); });
+    });
+    await save();
   };
 }
 

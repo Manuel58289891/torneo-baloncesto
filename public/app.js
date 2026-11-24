@@ -2,7 +2,7 @@
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtDate = (d) => d ? new Date(d + 'T12:00:00').toLocaleDateString('es', { weekday: 'short', day: 'numeric', month: 'short' }) : '';
 
-const TABS = [['rounds', 'Jornadas'], ['standings', 'Balance'], ['scorers', 'Anotadores'], ['mvps', 'MVPs']];
+const TABS = [['rounds', '📅 Jornadas'], ['standings', '📊 Balance'], ['scorers', '🔥 Anotadores'], ['mvps', '⭐ MVPs']];
 let tab = location.hash.slice(1) || 'rounds';
 let data, S, selRound = null;
 
@@ -19,6 +19,7 @@ async function load() {
     const open = S.rounds.find((r) => !r.complete);
     selRound = (open || S.rounds[S.rounds.length - 1] || {}).round ?? null;
   }
+  if (document.activeElement?.id === 'scq') return;
   render();
 }
 
@@ -30,6 +31,10 @@ function render() {
   v.innerHTML = ({ rounds: viewRounds, standings: viewStandings, scorers: viewScorers, mvps: viewMvps }[tab] || viewRounds)();
   document.querySelectorAll('[data-scmode]').forEach((b) => b.onclick = () => { scMode = b.dataset.scmode; render(); });
   document.querySelectorAll('[data-scsort]').forEach((b) => b.onclick = () => { scSort = b.dataset.scsort; render(); });
+  const q = document.getElementById('scq'), tsel = document.getElementById('sct');
+  const refill = () => { document.getElementById('scBody').innerHTML = scorersTable(); };
+  if (q) q.oninput = () => { scQuery = q.value; refill(); };
+  if (tsel) tsel.onchange = () => { scTeam = tsel.value; refill(); };
   const sel = document.getElementById('roundSel');
   if (sel) sel.onchange = () => { selRound = +sel.value; render(); };
 }
@@ -45,7 +50,7 @@ const tName = (id, after) => {
 };
 const pName = (id) => {
   const p = S.players.get(id);
-  return `<span class="lbl">${avatar(p?.photo, p?.name, 'photo')}${esc(p?.name ?? '?')}</span>`;
+  return `<span class="lbl pl" data-pid="${esc(id)}">${avatar(p?.photo, p?.name, 'photo')}${esc(p?.name ?? '?')}</span>`;
 };
 
 function gameRow(g) {
@@ -87,28 +92,81 @@ function viewStandings() {
   <p class="muted">PJ partidos jugados · PF puntos a favor · PC puntos en contra · DIF diferencia · PTS ${Stats.WIN_POINTS} por victoria, ${Stats.LOSS_POINTS} por derrota.</p></div>`;
 }
 
-let scMode = 'total', scSort = 'pts'; // total | avg  ·  pts | reb | ast
+let scMode = 'total', scSort = 'pts', scTeam = 'all', scQuery = ''; // total | avg · pts | reb | ast
+const norm = (t) => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+function scorersTable() {
+  const avg = scMode === 'avg';
+  const val = (e, k) => avg ? (e.gp ? e[k] / e.gp : -1) : e[k];
+  const f = (n) => avg ? (n < 0 ? '—' : n.toFixed(1)) : n;
+  const ranked = [...S.scorers].sort((x, y) => val(y, scSort) - val(x, scSort) || y.pts - x.pts || y.gp - x.gp);
+  ranked.forEach((e, i) => { e.rank = i + 1; }); // el puesto es el global, aunque se filtre
+  const filtering = scTeam !== 'all' || scQuery.trim();
+  const rows = ranked.filter((e) => (scTeam === 'all' || e.teamId === scTeam)
+    && (!scQuery.trim() || norm(S.players.get(e.playerId)?.name).includes(norm(scQuery)))).slice(0, filtering ? 200 : 30);
+  if (!rows.length) return '<div class="empty">Ningún jugador coincide con la búsqueda.</div>';
+  const head = (k, tot, av) => `<th class="${scSort === k ? 'sorted' : ''}">${avg ? av : tot}${scSort === k ? ' ▼' : ''}</th>`;
+  return `<div class="tablewrap"><table class="scorers">
+    <tr><th>#</th><th class="l">Jugador</th><th>PJ</th>${head('pts', 'PTS', 'PPP')}${head('reb', 'REB', 'RPP')}${head('ast', 'AST', 'APP')}<th class="hm">Mejor partido</th></tr>
+    ${rows.map((e) => { const p = S.players.get(e.playerId); return `<tr class="prow ${e.rank === 1 ? 'top1' : ''}" data-pid="${esc(e.playerId)}"><td class="pos ${e.rank <= 3 ? 'r' + e.rank : ''}"><span>${e.rank}</span></td>
+      <td class="l"><div class="pcell">${avatar(p?.photo, p?.name, 'photo face')}<div class="pinfo"><div class="pnm">${esc(p?.name ?? '?')}</div><div class="pteam">${tName(e.teamId)}</div></div></div></td>
+      <td>${e.gp || '—'}</td>
+      <td class="${scSort === 'pts' ? 'sorted' : ''}"><b>${f(val(e, 'pts'))}</b></td><td class="${scSort === 'reb' ? 'sorted' : ''}">${f(val(e, 'reb'))}</td>
+      <td class="${scSort === 'ast' ? 'sorted' : ''}">${f(val(e, 'ast'))}</td><td class="hm">${e.high ? e.high + ' pts' : '—'}</td></tr>`; }).join('')}
+  </table></div>`;
+}
+
 function viewScorers() {
   if (!S.scorers.length) return '<div class="card empty">Aún no hay estadísticas de jugadores.</div>';
   const avg = scMode === 'avg';
-  const val = (e, k) => avg ? e[k] / e.gp : e[k];
-  const rows = [...S.scorers].sort((x, y) => val(y, scSort) - val(x, scSort) || y.pts - x.pts || y.gp - x.gp).slice(0, 30);
-  const f = (n) => avg ? n.toFixed(1) : n;
-  const head = (k, tot, av) => `<th class="${scSort === k ? 'sorted' : ''}">${avg ? av : tot}${scSort === k ? ' ▼' : ''}</th>`;
   const seg = (attr, cur, opts) => `<div class="seg">${opts.map(([v, l]) => `<button class="${cur === v ? 'on' : ''}" data-${attr}="${v}">${l}</button>`).join('')}</div>`;
+  const teams = [...S.teams.values()].sort((a, b) => a.name.localeCompare(b.name));
   return `<div class="card"><h2>Máximos anotadores</h2>
-    <div class="row" style="gap:16px">
+    <div class="row" style="gap:12px 16px">
+      <label>Buscar jugador<input type="search" id="scq" placeholder="Nombre…" value="${esc(scQuery)}" autocomplete="off"></label>
+      <label>Equipo<select id="sct"><option value="all">Todos los equipos</option>${teams.map((t) => `<option value="${esc(t.id)}" ${t.id === scTeam ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></label>
+    </div>
+    <div class="row" style="gap:12px 16px">
       <label>Mostrar ${seg('scmode', scMode, [['total', 'Totales'], ['avg', 'Promedio']])}</label>
       <label>Ordenar por ${seg('scsort', scSort, [['pts', avg ? 'PPP (puntos)' : 'Puntos'], ['ast', 'Asistencias'], ['reb', 'Rebotes']])}</label>
     </div>
-    <div class="tablewrap"><table class="scorers">
-    <tr><th>#</th><th class="l">Jugador</th><th class="l">Equipo</th><th class="hm">PJ</th>${head('pts', 'PTS', 'PPP')}${head('reb', 'REB', 'RPP')}${head('ast', 'AST', 'APP')}<th class="hm">Mejor partido</th></tr>
-    ${rows.map((e, i) => `<tr class="${i === 0 ? 'top1' : ''}"><td class="pos">${i + 1}</td>
-      <td class="l">${pName(e.playerId)}</td><td class="l">${tName(e.teamId)}</td><td class="hm">${e.gp}</td>
-      <td class="${scSort === 'pts' ? 'sorted' : ''}"><b>${f(val(e, 'pts'))}</b></td><td class="${scSort === 'reb' ? 'sorted' : ''}">${f(val(e, 'reb'))}</td>
-      <td class="${scSort === 'ast' ? 'sorted' : ''}">${f(val(e, 'ast'))}</td><td class="hm">${e.high} pts</td></tr>`).join('')}
-  </table></div><p class="muted">PJ = partidos jugados · PPP / RPP / APP = puntos / rebotes / asistencias por partido · Mejor partido = más puntos en un solo juego.</p></div>`;
+    <div id="scBody">${scorersTable()}</div>
+    <p class="muted">Toca un jugador para ver su tarjeta. PJ = partidos jugados · PPP / RPP / APP = puntos / rebotes / asistencias por partido (solo con partidos jugados cargados) · Mejor partido = más puntos en un solo juego.</p></div>`;
 }
+
+// ---- Tarjeta del jugador ----
+function playerCard(pid) {
+  const p = S.players.get(pid); if (!p) return;
+  const t = S.teams.get(p.teamId);
+  const e = S.scorers.find((x) => x.playerId === pid) || { gp: 0, pts: 0, reb: 0, ast: 0, high: 0 };
+  const log = [];
+  S.rounds.forEach((r) => r.games.forEach((g) => {
+    const st = (g.stats || []).find((x) => x.playerId === pid); if (!g.played || !st) return;
+    const mine = g.home === p.teamId ? g.homeScore : g.awayScore, theirs = g.home === p.teamId ? g.awayScore : g.homeScore;
+    log.push({ r: r.round, opp: g.home === p.teamId ? g.away : g.home, win: mine > theirs, score: mine + '-' + theirs, st });
+  }));
+  const per = (n) => e.gp ? (n / e.gp).toFixed(1) : '—';
+  const d = document.getElementById('pcard');
+  d.innerHTML = `<div class="pc-hero"><div class="pc-ring">${p.photo ? `<img src="${esc(p.photo)}" alt="">` : `<span>${esc(initials(p.name))}</span>`}</div>
+      <button class="pc-x" aria-label="Cerrar" data-close>×</button></div>
+    <div class="pc-body">
+      <h2>${esc(p.name)}</h2>
+      <div class="pc-sub">${p.number !== '' && p.number != null ? `<span class="badge">#${esc(p.number)}</span>` : ''}<span class="lbl">${avatar(t?.logo, t?.name, 'logo')}<b>${esc(t?.name ?? '')}</b></span></div>
+      <div class="pc-stats">
+        <div><b>${e.gp || '—'}</b><span>PJ</span></div><div><b>${e.pts}</b><span>PTS</span></div><div><b>${per(e.pts)}</b><span>PPP</span></div>
+        <div><b>${e.reb}</b><span>REB</span></div><div><b>${e.ast}</b><span>AST</span></div><div><b>${e.high || '—'}</b><span>Mejor</span></div>
+      </div>
+      ${log.length ? `<h3>Partidos</h3><table>${log.map((l) => `<tr><td class="l">J${l.r} vs ${tName(l.opp)}</td><td><span class="${l.win ? 'pos-num' : 'neg-num'}">${l.win ? 'G' : 'P'} ${l.score}</span></td><td>${l.st.pts} pts</td><td>${l.st.reb} reb</td><td>${l.st.ast} ast</td></tr>`).join('')}</table>`
+        : '<p class="muted">Aún no hay partidos con estadísticas de este jugador.' + (e.pts ? ' Sus puntos son acumulados cargados antes de registrar partido por partido.' : '') + '</p>'}
+    </div>`;
+  d.querySelector('[data-close]').onclick = () => d.close();
+  if (!d.open) d.showModal();
+}
+document.getElementById('view').addEventListener('click', (ev) => {
+  const el = ev.target.closest('[data-pid]'); if (el) playerCard(el.dataset.pid);
+});
+const pcard = document.getElementById('pcard');
+pcard.addEventListener('click', (ev) => { if (ev.target === pcard) pcard.close(); }); // clic fuera = cerrar
 
 function viewMvps() {
   const done = S.rounds.filter((r) => r.mvp);

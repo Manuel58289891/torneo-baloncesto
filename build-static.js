@@ -18,7 +18,10 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(PUBLIC)) {
   if (f === 'admin.html' || f === 'admin.js') continue;
   let buf = fs.readFileSync(path.join(PUBLIC, f));
-  if (f === 'index.html') buf = buf.toString('utf8').replace(/\s*<a href="admin\.html">[^<]*<\/a>/, '');
+  if (f === 'index.html') {
+    // el sitio público no lleva enlace al panel de administración
+    buf = buf.toString('utf8').replace(/\s*<div class="foot adm">[\s\S]*?<\/div>/, '').replace(/\s*<a href="admin\.html">[^<]*<\/a>/, '');
+  }
   fs.writeFileSync(path.join(OUT, f), buf);
 }
 
