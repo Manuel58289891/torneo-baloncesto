@@ -22,7 +22,7 @@
 .bg-lights { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .5;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='560' viewBox='0 0 900 560' fill='none' stroke='white' stroke-opacity='.10' stroke-width='3'><rect x='20' y='20' width='860' height='520' rx='6'/><line x1='450' y1='20' x2='450' y2='540'/><circle cx='450' cy='280' r='72'/><path d='M20 150 h130 v260 h-130'/><path d='M880 150 h-130 v260 h130'/><path d='M150 210 a70 70 0 0 1 0 140'/><path d='M750 210 a70 70 0 0 0 0 140'/></svg>");
   background-size: 900px 560px; background-position: center top; background-repeat: repeat-y; }
-.theme > * { position: relative; z-index: 1; }
+.theme > :not(dialog) { position: relative; z-index: 1; }
 
 /* ---------- Cabecera ---------- */
 .hero { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 34px 18px 18px; text-align: left; }
@@ -142,3 +142,56 @@
   .theme table:not(.scorers) .av { width: 22px; height: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero .ball, .theme .card { animation: none; } }
+
+/* ---------- Jornadas: nombres y escudos más grandes ---------- */
+.theme .game { padding: 18px 0; gap: 14px; }
+.theme .game .team { font-size: 1.3rem; line-height: 1.15; }
+.theme .game .team .lbl { gap: 14px; }
+.theme .game .av { width: 64px; height: 64px; }
+.theme .game .av.logo { background: transparent; padding: 0; border-radius: 0; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .5)); }
+.theme .game .av.ph { border-radius: 16px; font-size: 1rem; }
+.theme .game .score { font-size: 1.7rem; min-width: 130px; padding: 8px 18px; }
+.theme .game .score.pending { font-size: .95rem; }
+.theme .game .meta { font-size: .85rem; }
+.theme .game .badge .av { width: 24px; height: 24px; filter: none; }
+@media (max-width: 600px) {
+  .theme .game { padding: 16px 0; gap: 8px; }
+  .theme .game .team, .theme .game .team.home { font-size: 1.02rem; }
+  .theme .game .team .lbl { gap: 6px; }
+  .theme .game .av { width: 54px; height: 54px; }
+  .theme .game .score { font-size: 1.2rem; min-width: 0; padding: 7px 10px; }
+  .theme .game .score.pending { font-size: .78rem; }
+}
+
+/* ---------- Tarjetas centradas (también en celular) ---------- */
+.theme dialog.pcard { margin: auto; max-height: 88vh; overflow: auto; }
+.theme .tl { cursor: pointer; }
+.theme .tl:hover .tn { color: var(--yellow); text-decoration: underline; text-decoration-color: rgba(255, 210, 63, .5); text-underline-offset: 4px; }
+
+/* ---------- Tarjeta del equipo ---------- */
+.tc-hero { padding-top: 26px; }
+.tc-logo { width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; border-radius: 22px; padding: 6px;
+  background: rgba(255, 255, 255, .06); border: 2px solid rgba(255, 210, 63, .55); box-shadow: 0 10px 30px rgba(0, 0, 0, .5), 0 0 28px rgba(255, 122, 0, .4); }
+.tc-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 14px; }
+.tc-logo span { font-family: "Arial Black", Impact, sans-serif; font-size: 2.4rem; color: var(--muted); }
+.theme dialog.tcard { width: min(360px, 94vw); }
+.theme .tc-stats { margin-top: 4px; }
+.theme .pc-body h3 { text-align: left; margin-top: 4px; }
+.tc-players { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.tc-p { display: flex; align-items: center; gap: 9px; text-align: left; background: rgba(255, 255, 255, .07); border: 1px solid var(--line); border-radius: 12px; padding: 8px 9px; color: var(--ink); cursor: pointer; font: inherit; transition: transform .15s, background .2s; }
+.tc-p:hover { background: rgba(255, 122, 0, .16); transform: translateY(-1px); }
+.tc-p .av { width: 44px; height: 44px; flex: none; }
+.tc-pn { display: block; font-weight: 700; font-size: .92rem; line-height: 1.15; }
+.tc-pm { display: block; font-size: .74rem; color: var(--muted); margin-top: 2px; }
+.tc-pt { min-width: 0; }
+
+/* ---------- Móvil: nombres de equipo centrados y mejor repartidos ---------- */
+@media (max-width: 600px) {
+  .theme .game { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 6px; }
+  .theme .game .team, .theme .game .team.home { text-align: center; font-size: .98rem; line-height: 1.15; }
+  .theme .game .team .lbl { align-items: center; text-align: center; }
+  .theme .game .team .tn { text-wrap: balance; overflow-wrap: anywhere; hyphens: none; }
+  .theme .game .score { padding: 7px 9px; font-size: 1.15rem; }
+  .tc-players { grid-template-columns: 1fr 1fr; }
+  .theme dialog.pcard { max-height: 86vh; }
+}

@@ -46,7 +46,7 @@ const avatar = (url, name, cls) => url
 // nombre con logo; `after` pone el logo a la derecha del nombre (equipo local, alineado a la derecha)
 const tName = (id, after) => {
   const t = S.teams.get(id); const n = `<span class="tn">${esc(t?.name ?? '?')}</span>`; const a = avatar(t?.logo, t?.name, 'logo');
-  return `<span class="lbl">${after ? n + a : a + n}</span>`;
+  return `<span class="lbl tl" data-tid="${esc(id)}">${after ? n + a : a + n}</span>`;
 };
 const pName = (id) => {
   const p = S.players.get(id);
@@ -162,8 +162,36 @@ function playerCard(pid) {
   d.querySelector('[data-close]').onclick = () => d.close();
   if (!d.open) d.showModal();
 }
-document.getElementById('view').addEventListener('click', (ev) => {
-  const el = ev.target.closest('[data-pid]'); if (el) playerCard(el.dataset.pid);
+// ---- Tarjeta del equipo: escudo, balance y jugadores (tocar un jugador abre su tarjeta) ----
+function teamCard(tid) {
+  const t = S.teams.get(tid); if (!t) return;
+  const st = S.standings.find((r) => r.teamId === tid) || { pj: 0, g: 0, p: 0, pf: 0, pc: 0, dif: 0, pts: 0 };
+  const sc = new Map(S.scorers.map((e) => [e.playerId, e]));
+  const d = document.getElementById('tcard');
+  d.innerHTML = `<div class="pc-hero tc-hero"><div class="tc-logo">${t.logo ? `<img src="${esc(t.logo)}" alt="">` : `<span>${esc(initials(t.name))}</span>`}</div>
+      <button class="pc-x" aria-label="Cerrar" data-close>×</button></div>
+    <div class="pc-body">
+      <h2>${esc(t.name)}</h2>
+      <div class="pc-stats tc-stats">
+        <div><b>${st.pj}</b><span>PJ</span></div><div><b>${st.g}-${st.p}</b><span>G-P</span></div><div><b>${st.dif > 0 ? '+' : ''}${st.dif}</b><span>Dif</span></div>
+        <div><b>${st.pf}</b><span>PF</span></div><div><b>${st.pc}</b><span>PC</span></div><div><b>${st.pts}</b><span>PTS</span></div>
+      </div>
+      <h3>Jugadores (${t.players.length})</h3>
+      ${t.players.length ? `<div class="tc-players">${t.players.map((p) => { const e = sc.get(p.id);
+        return `<button class="tc-p" data-pid="${esc(p.id)}">${avatar(p.photo, p.name, 'photo face')}<div class="tc-pt"><span class="tc-pn">${esc(p.name)}</span>
+          <span class="tc-pm">${p.number !== '' && p.number != null ? '#' + esc(p.number) : ''}${e && e.pts ? (p.number ? ' · ' : '') + e.pts + ' pts' : ''}</span></div></button>`; }).join('')}</div>`
+        : '<p class="muted">Este equipo aún no tiene jugadores cargados.</p>'}
+    </div>`;
+  d.querySelector('[data-close]').onclick = () => d.close();
+  if (!d.open) d.showModal();
+}
+const delegate = (ev) => {
+  const el = ev.target.closest('[data-pid],[data-tid]'); if (!el) return;
+  if (el.dataset.pid) playerCard(el.dataset.pid); else teamCard(el.dataset.tid);
+};
+document.getElementById('view').addEventListener('click', delegate);
+document.getElementById('tcard').addEventListener('click', (ev) => { // dentro de la tarjeta del equipo: tocar un jugador abre su tarjeta
+  if (ev.target === ev.currentTarget) ev.currentTarget.close(); else { const el = ev.target.closest('[data-pid]'); if (el) playerCard(el.dataset.pid); }
 });
 const pcard = document.getElementById('pcard');
 pcard.addEventListener('click', (ev) => { if (ev.target === pcard) pcard.close(); }); // clic fuera = cerrar
