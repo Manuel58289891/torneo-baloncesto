@@ -9,25 +9,25 @@
           "id": "8ami5lo1",
           "name": "Eduardo",
           "number": "1",
-          "photo": ""
+          "photo": "uploads/5a08aede8006c2b1a1e8.jpg"
         },
         {
           "id": "2baskw69",
           "name": "Leyan",
           "number": "2",
-          "photo": ""
+          "photo": "uploads/e502be1d48c47c70237e.jpg"
         },
         {
           "id": "llmvvx6q",
           "name": "Dayron",
           "number": "3",
-          "photo": ""
+          "photo": "uploads/737481765b6bfcb8d8d8.jpg"
         },
         {
           "id": "dn71do6l",
           "name": "Javier",
           "number": "4",
-          "photo": "",
+          "photo": "uploads/ec968e1267f71cb13221.jpg",
           "basePts": 21,
           "baseReb": 0,
           "baseAst": 0,
@@ -37,7 +37,7 @@
           "id": "taxii9p8",
           "name": "Mel",
           "number": "5",
-          "photo": ""
+          "photo": "uploads/44f7e202aaa2ed55e81f.jpg"
         }
       ],
       "logo": "uploads/90b3f410731a2058de4f.png"
@@ -298,7 +298,7 @@
           "id": "ill2fwl9",
           "name": "Manuel Alejandro",
           "number": "11",
-          "photo": "",
+          "photo": "uploads/2ea543a636d49d36fa6e.jpg",
           "basePts": 16,
           "baseReb": 0,
           "baseAst": 0,
@@ -322,7 +322,8 @@
           "number": "3",
           "photo": ""
         }
-      ]
+      ],
+      "logo": "uploads/ff3428915fac75374964.png"
     }
   ],
   "games": [
@@ -1055,5 +1056,5 @@
       "stats": []
     }
   ],
-  "rev": 4
+  "rev": 11
 }
