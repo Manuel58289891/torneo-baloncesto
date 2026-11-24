@@ -173,3 +173,9 @@ dialog.pcard { width: min(380px, 94vw); padding: 0; overflow: hidden; border-rad
   .pteam .lbl .av { margin-top: 1px; }
   .scorers th, .scorers td { padding-left: 2px; padding-right: 2px; }
 }
+
+/* Botón de publicar (admin) */
+.hdr-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn.pub { background: linear-gradient(135deg, #ffd23f, #ff7a00); color: #1b0b00; box-shadow: 0 4px 14px rgba(255, 122, 0, .45); }
+.btn.pub:hover { filter: brightness(1.08); }
+.btn.pub:disabled { opacity: .7; cursor: progress; }
