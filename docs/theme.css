@@ -268,3 +268,8 @@
 .theme main > .card:last-child { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .theme footer .sponsor { margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
 @media (max-width: 600px) { .theme footer .sponsor { margin-top: 0; } }
+
+/* Banner de Tráelo con una separación pequeña respecto a la tabla */
+.theme main > .card:last-child { margin-bottom: 0; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; }
+.theme footer .sponsor { margin-top: 14px; border-top-left-radius: 22px; border-top-right-radius: 22px; }
+@media (max-width: 600px) { .theme footer .sponsor { margin-top: 14px; } .theme main > .card:last-child { border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; } }
