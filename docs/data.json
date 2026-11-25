@@ -136,13 +136,13 @@
           "id": "b4cfndc5",
           "name": "Yandy",
           "number": "1",
-          "photo": ""
+          "photo": "uploads/0683f76afc696e3bb7e8.jpg"
         },
         {
           "id": "ofv6o90r",
           "name": "Wilman",
           "number": "2",
-          "photo": "",
+          "photo": "uploads/23fe5d3c21cb0bee2bc9.jpg",
           "basePts": 30,
           "baseReb": 0,
           "baseAst": 0,
@@ -158,7 +158,7 @@
           "id": "o254tc2r",
           "name": "Pacheco",
           "number": "4",
-          "photo": ""
+          "photo": "uploads/893f527d6ce3b52a35aa.jpg"
         },
         {
           "id": "tqoq6stv",
@@ -257,25 +257,25 @@
           "id": "wo4kgt0l",
           "name": "Erick",
           "number": "1",
-          "photo": ""
+          "photo": "uploads/51b4ad90486f80e19b59.jpg"
         },
         {
           "id": "04vd2ih7",
           "name": "Yeison",
           "number": "2",
-          "photo": ""
+          "photo": "uploads/1a928eff6d632c4f07a0.jpg"
         },
         {
           "id": "nhaq1ify",
           "name": "Adrian",
           "number": "3",
-          "photo": ""
+          "photo": "uploads/e8d2f3ffbd88b0fdded1.jpg"
         },
         {
           "id": "d16e6tcy",
           "name": "Carlucho",
           "number": "4",
-          "photo": "",
+          "photo": "uploads/9db7ddf4c484094872d6.jpg",
           "basePts": 25,
           "baseReb": 0,
           "baseAst": 0,
@@ -285,7 +285,7 @@
           "id": "hj8zrce0",
           "name": "Maikel",
           "number": "23",
-          "photo": ""
+          "photo": "uploads/0f88170f9b3ad2014be4.jpg"
         }
       ],
       "logo": "uploads/65add8f2cfbe90a3d59f.png"
@@ -298,7 +298,7 @@
           "id": "ill2fwl9",
           "name": "Manuel Alejandro",
           "number": "11",
-          "photo": "uploads/2ea543a636d49d36fa6e.jpg",
+          "photo": "uploads/130a372915c29bf6df00.jpg",
           "basePts": 16,
           "baseReb": 0,
           "baseAst": 0,
@@ -308,19 +308,19 @@
           "id": "dapdvhp5",
           "name": "Reinier",
           "number": "6",
-          "photo": ""
+          "photo": "uploads/9cb3888501224803bbb9.jpg"
         },
         {
           "id": "artvss6v",
           "name": "Brayan",
           "number": "23",
-          "photo": ""
+          "photo": "uploads/98d0c4b1a8ff766438d1.jpg"
         },
         {
           "id": "qmqb2fpz",
           "name": "Yoelito",
           "number": "3",
-          "photo": ""
+          "photo": "uploads/fedd486a78519f9a44d5.jpg"
         }
       ],
       "logo": "uploads/ff3428915fac75374964.png"
@@ -1056,5 +1056,5 @@
       "stats": []
     }
   ],
-  "rev": 11
+  "rev": 23
 }
