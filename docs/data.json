@@ -9,7 +9,7 @@
           "id": "8ami5lo1",
           "name": "Eduardo",
           "number": "1",
-          "photo": "uploads/5a08aede8006c2b1a1e8.jpg",
+          "photo": "uploads/519ffcf73327fc519ab6.jpg",
           "basePts": 25,
           "baseGp": 5,
           "baseReb": 0,
@@ -39,7 +39,7 @@
           "id": "dn71do6l",
           "name": "Javier",
           "number": "4",
-          "photo": "uploads/ec968e1267f71cb13221.jpg",
+          "photo": "uploads/ef6fcd418d716e6243b4.jpg",
           "basePts": 21,
           "baseReb": 0,
           "baseAst": 0,
@@ -49,7 +49,7 @@
           "id": "taxii9p8",
           "name": "Mel",
           "number": "5",
-          "photo": "uploads/44f7e202aaa2ed55e81f.jpg",
+          "photo": "uploads/e6ee36fcc281078ae8c1.jpg",
           "basePts": 10,
           "baseGp": 5,
           "baseReb": 0,
@@ -224,7 +224,7 @@
           "id": "lv2i0swu",
           "name": "Yordan",
           "number": "3",
-          "photo": "",
+          "photo": "uploads/f71dd67d3532bd663828.jpg",
           "basePts": 1,
           "baseGp": 5,
           "baseReb": 0,
@@ -244,7 +244,7 @@
           "id": "tqoq6stv",
           "name": "Tito",
           "number": "5",
-          "photo": "",
+          "photo": "uploads/891c88713f74ff907913.jpg",
           "basePts": 0,
           "baseGp": 0,
           "baseReb": 0,
@@ -262,7 +262,7 @@
           "id": "bectjgoz",
           "name": "Alejandro",
           "number": "",
-          "photo": "",
+          "photo": "uploads/f81fdba92ef5c3af734d.jpg",
           "basePts": 16,
           "baseGp": 5
         }
@@ -1224,6 +1224,6 @@
       "stats": []
     }
   ],
-  "rev": 26,
+  "rev": 33,
   "baseThrough": 3
 }
