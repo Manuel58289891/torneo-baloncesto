@@ -9,19 +9,31 @@
           "id": "8ami5lo1",
           "name": "Eduardo",
           "number": "1",
-          "photo": "uploads/5a08aede8006c2b1a1e8.jpg"
+          "photo": "uploads/5a08aede8006c2b1a1e8.jpg",
+          "basePts": 25,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "2baskw69",
           "name": "Leyan",
           "number": "2",
-          "photo": "uploads/e502be1d48c47c70237e.jpg"
+          "photo": "uploads/e502be1d48c47c70237e.jpg",
+          "basePts": 6,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "llmvvx6q",
           "name": "Dayron",
           "number": "3",
-          "photo": "uploads/737481765b6bfcb8d8d8.jpg"
+          "photo": "uploads/737481765b6bfcb8d8d8.jpg",
+          "basePts": 5,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "dn71do6l",
@@ -31,13 +43,17 @@
           "basePts": 21,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 3
+          "baseGp": 5
         },
         {
           "id": "taxii9p8",
           "name": "Mel",
           "number": "5",
-          "photo": "uploads/44f7e202aaa2ed55e81f.jpg"
+          "photo": "uploads/44f7e202aaa2ed55e81f.jpg",
+          "basePts": 10,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         }
       ],
       "logo": "uploads/90b3f410731a2058de4f.png"
@@ -51,48 +67,60 @@
           "name": "Ernesto",
           "number": "1",
           "photo": "uploads/dbeefe233f58d103f96f.jpg",
-          "basePts": 14,
+          "basePts": 18,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 5
+          "baseGp": 7
         },
         {
           "id": "dabriqs1",
           "name": "Lusley",
           "number": "2",
           "photo": "uploads/04ed10342bbbceddfd8b.jpg",
-          "basePts": 24,
+          "basePts": 31,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 5
+          "baseGp": 7
         },
         {
           "id": "kb9nq5a2",
           "name": "Maikel",
           "number": "3",
-          "photo": "uploads/def0b83c60e58841c47a.jpg"
+          "photo": "uploads/def0b83c60e58841c47a.jpg",
+          "basePts": 15,
+          "baseGp": 7,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "dxlgma6l",
           "name": "Osniel",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 12,
+          "baseGp": 7,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "052xa6oi",
           "name": "Yosbel",
           "number": "5",
           "photo": "uploads/a4d4477601cf26422a8d.jpg",
-          "basePts": 22,
+          "basePts": 28,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 5
+          "baseGp": 7
         },
         {
           "id": "iblg12sx",
           "name": "Yasmany",
           "number": "6",
-          "photo": ""
+          "photo": "",
+          "basePts": 6,
+          "baseGp": 7,
+          "baseReb": 0,
+          "baseAst": 0
         }
       ],
       "logo": "uploads/84e42cd92a1e6a89506a.png"
@@ -105,25 +133,65 @@
           "id": "do33uwy5",
           "name": "Sandy Musibay",
           "number": "1",
-          "photo": ""
+          "photo": "",
+          "basePts": 6,
+          "baseGp": 4,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "8m93i2yt",
           "name": "El Marinero",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 10,
+          "baseGp": 4,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "68xk22yz",
           "name": "Ariel Soberon",
           "number": "3",
-          "photo": ""
+          "photo": "",
+          "basePts": 10,
+          "baseGp": 4,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "y0zn0oes",
           "name": "Alejandro Soberon",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
+        },
+        {
+          "id": "bn5lmcjh",
+          "name": "Dayron",
+          "number": "",
+          "photo": "",
+          "basePts": 16,
+          "baseGp": 4
+        },
+        {
+          "id": "ndwni8s9",
+          "name": "Drogba",
+          "number": "",
+          "photo": "",
+          "basePts": 5,
+          "baseGp": 4
+        },
+        {
+          "id": "e6orhw4i",
+          "name": "Jorgito",
+          "number": "",
+          "photo": "",
+          "basePts": 4,
+          "baseGp": 4
         }
       ],
       "logo": "uploads/a104386cbf90e5c483b4.png"
@@ -136,35 +204,67 @@
           "id": "b4cfndc5",
           "name": "Yandy",
           "number": "1",
-          "photo": "uploads/0683f76afc696e3bb7e8.jpg"
+          "photo": "uploads/0683f76afc696e3bb7e8.jpg",
+          "basePts": 13,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "ofv6o90r",
           "name": "Wilman",
           "number": "2",
           "photo": "uploads/23fe5d3c21cb0bee2bc9.jpg",
-          "basePts": 30,
+          "basePts": 42,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 3
+          "baseGp": 5
         },
         {
           "id": "lv2i0swu",
           "name": "Yordan",
           "number": "3",
-          "photo": ""
+          "photo": "",
+          "basePts": 1,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "o254tc2r",
-          "name": "Pacheco",
+          "name": "Osbel",
           "number": "4",
-          "photo": "uploads/893f527d6ce3b52a35aa.jpg"
+          "photo": "uploads/893f527d6ce3b52a35aa.jpg",
+          "basePts": 19,
+          "baseGp": 5,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "tqoq6stv",
           "name": "Tito",
           "number": "5",
-          "photo": ""
+          "photo": "",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
+        },
+        {
+          "id": "h1pd467b",
+          "name": "Jesbel",
+          "number": "",
+          "photo": "",
+          "basePts": 25,
+          "baseGp": 5
+        },
+        {
+          "id": "bectjgoz",
+          "name": "Alejandro",
+          "number": "",
+          "photo": "",
+          "basePts": 16,
+          "baseGp": 5
         }
       ],
       "logo": "uploads/4be78d369a06d04ecc6b.png"
@@ -177,7 +277,11 @@
           "id": "w8lgucsi",
           "name": "Naidel",
           "number": "1",
-          "photo": ""
+          "photo": "",
+          "basePts": 6,
+          "baseGp": 6,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "ws6anzze",
@@ -187,19 +291,27 @@
           "basePts": 29,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 4
+          "baseGp": 6
         },
         {
           "id": "vl4te3m2",
           "name": "Alejandro",
           "number": "3",
-          "photo": ""
+          "photo": "",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "vcucu6os",
           "name": "Alecra",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 2,
+          "baseGp": 6,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "ydb5ndt8",
@@ -209,7 +321,7 @@
           "basePts": 16,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 4
+          "baseGp": 6
         }
       ],
       "logo": "uploads/38bfff064ab7f5aa67b4.png"
@@ -223,28 +335,56 @@
           "name": "Yoenis",
           "number": "1",
           "photo": "",
-          "basePts": 11,
+          "basePts": 34,
           "baseReb": 0,
           "baseAst": 0,
-          "baseGp": 2
+          "baseGp": 4
         },
         {
           "id": "drmkx78z",
           "name": "Yordan",
           "number": "2",
-          "photo": ""
+          "photo": "",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "zubcnx5p",
           "name": "Marlon",
           "number": "3",
-          "photo": ""
+          "photo": "",
+          "basePts": 17,
+          "baseGp": 4,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "d19hls58",
           "name": "Flaco Zurdo",
           "number": "4",
-          "photo": ""
+          "photo": "",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
+        },
+        {
+          "id": "wwrbr3tf",
+          "name": "Ronel",
+          "number": "",
+          "photo": "",
+          "basePts": 10,
+          "baseGp": 4
+        },
+        {
+          "id": "8q37n39e",
+          "name": "Angel",
+          "number": "",
+          "photo": "",
+          "basePts": 6,
+          "baseGp": 4
         }
       ],
       "logo": "uploads/a44d53cb04c985db1e41.png"
@@ -257,19 +397,31 @@
           "id": "wo4kgt0l",
           "name": "Erick",
           "number": "1",
-          "photo": "uploads/51b4ad90486f80e19b59.jpg"
+          "photo": "uploads/51b4ad90486f80e19b59.jpg",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "04vd2ih7",
           "name": "Yeison",
           "number": "2",
-          "photo": "uploads/1a928eff6d632c4f07a0.jpg"
+          "photo": "uploads/1a928eff6d632c4f07a0.jpg",
+          "basePts": 4,
+          "baseGp": 3,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "nhaq1ify",
           "name": "Adrian",
           "number": "3",
-          "photo": "uploads/e8d2f3ffbd88b0fdded1.jpg"
+          "photo": "uploads/e8d2f3ffbd88b0fdded1.jpg",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "d16e6tcy",
@@ -283,9 +435,13 @@
         },
         {
           "id": "hj8zrce0",
-          "name": "Maikel",
+          "name": "Yordan",
           "number": "23",
-          "photo": "uploads/0f88170f9b3ad2014be4.jpg"
+          "photo": "uploads/0f88170f9b3ad2014be4.jpg",
+          "basePts": 5,
+          "baseGp": 3,
+          "baseReb": 0,
+          "baseAst": 0
         }
       ],
       "logo": "uploads/65add8f2cfbe90a3d59f.png"
@@ -308,19 +464,31 @@
           "id": "dapdvhp5",
           "name": "Reinier",
           "number": "6",
-          "photo": "uploads/9cb3888501224803bbb9.jpg"
+          "photo": "uploads/9cb3888501224803bbb9.jpg",
+          "basePts": 0,
+          "baseGp": 0,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "artvss6v",
           "name": "Brayan",
           "number": "23",
-          "photo": "uploads/98d0c4b1a8ff766438d1.jpg"
+          "photo": "uploads/98d0c4b1a8ff766438d1.jpg",
+          "basePts": 8,
+          "baseGp": 2,
+          "baseReb": 0,
+          "baseAst": 0
         },
         {
           "id": "qmqb2fpz",
           "name": "Yoelito",
           "number": "3",
-          "photo": "uploads/fedd486a78519f9a44d5.jpg"
+          "photo": "uploads/fedd486a78519f9a44d5.jpg",
+          "basePts": 10,
+          "baseGp": 2,
+          "baseReb": 0,
+          "baseAst": 0
         }
       ],
       "logo": "uploads/ff3428915fac75374964.png"
@@ -1056,5 +1224,6 @@
       "stats": []
     }
   ],
-  "rev": 23
+  "rev": 26,
+  "baseThrough": 3
 }

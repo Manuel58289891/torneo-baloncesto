@@ -101,9 +101,8 @@ function scorersTable() {
   const f = (n) => avg ? (n < 0 ? '—' : n.toFixed(1)) : n;
   const ranked = [...S.scorers].sort((x, y) => val(y, scSort) - val(x, scSort) || y.pts - x.pts || y.gp - x.gp);
   ranked.forEach((e, i) => { e.rank = i + 1; }); // el puesto es el global, aunque se filtre
-  const filtering = scTeam !== 'all' || scQuery.trim();
-  const rows = ranked.filter((e) => (scTeam === 'all' || e.teamId === scTeam)
-    && (!scQuery.trim() || norm(S.players.get(e.playerId)?.name).includes(norm(scQuery)))).slice(0, filtering ? 200 : 30);
+    const rows = ranked.filter((e) => (scTeam === 'all' || e.teamId === scTeam)
+    && (!scQuery.trim() || norm(S.players.get(e.playerId)?.name).includes(norm(scQuery))));
   if (!rows.length) return '<div class="empty">Ningún jugador coincide con la búsqueda.</div>';
   const head = (k, tot, av) => `<th class="${scSort === k ? 'sorted' : ''}">${avg ? av : tot}${scSort === k ? ' ▼' : ''}</th>`;
   return `<div class="tablewrap"><table class="scorers">
@@ -131,7 +130,7 @@ function viewScorers() {
       <label>Ordenar por ${seg('scsort', scSort, [['pts', avg ? 'PPP (puntos)' : 'Puntos'], ['ast', 'Asistencias'], ['reb', 'Rebotes']])}</label>
     </div>
     <div id="scBody">${scorersTable()}</div>
-    <p class="muted">Toca un jugador para ver su tarjeta. PJ = partidos jugados · PPP / RPP / APP = puntos / rebotes / asistencias por partido (solo con partidos jugados cargados) · Mejor partido = más puntos en un solo juego.</p></div>`;
+    <p class="muted">${data.baseThrough ? `Puntos acumulados hasta la jornada ${data.baseThrough}. ` : ''}Toca un jugador para ver su tarjeta. PJ = partidos jugados · PPP / RPP / APP = puntos / rebotes / asistencias por partido (solo con partidos jugados cargados) · Mejor partido = más puntos en un solo juego.</p></div>`;
 }
 
 // ---- Tarjeta del jugador ----
@@ -157,7 +156,7 @@ function playerCard(pid) {
         <div><b>${e.reb}</b><span>REB</span></div><div><b>${e.ast}</b><span>AST</span></div><div><b>${e.high || '—'}</b><span>Mejor</span></div>
       </div>
       ${log.length ? `<h3>Partidos</h3><table>${log.map((l) => `<tr><td class="l">J${l.r} vs ${tName(l.opp)}</td><td><span class="${l.win ? 'pos-num' : 'neg-num'}">${l.win ? 'G' : 'P'} ${l.score}</span></td><td>${l.st.pts} pts</td><td>${l.st.reb} reb</td><td>${l.st.ast} ast</td></tr>`).join('')}</table>`
-        : '<p class="muted">Aún no hay partidos con estadísticas de este jugador.' + (e.pts ? ' Sus puntos son acumulados cargados antes de registrar partido por partido.' : '') + '</p>'}
+        : (e.pts ? `<p class="muted">Estadísticas acumuladas${data.baseThrough ? ' hasta la jornada ' + data.baseThrough : ''}. El detalle partido por partido se mostrará aquí desde que se registre.</p>` : '<p class="muted">Aún no hay estadísticas de este jugador.</p>')}
     </div>`;
   d.querySelector('[data-close]').onclick = () => d.close();
   if (!d.open) d.showModal();
