@@ -133,7 +133,7 @@
           "id": "do33uwy5",
           "name": "Sandy Musibay",
           "number": "1",
-          "photo": "",
+          "photo": "uploads/916381ab454d3c390e2c.jpg",
           "basePts": 6,
           "baseGp": 4,
           "baseReb": 0,
@@ -1204,6 +1204,6 @@
       "stats": []
     }
   ],
-  "rev": 43,
+  "rev": 44,
   "baseThrough": 3
 }
