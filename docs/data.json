@@ -241,20 +241,10 @@
           "baseAst": 0
         },
         {
-          "id": "tqoq6stv",
-          "name": "Tito",
-          "number": "5",
-          "photo": "uploads/891c88713f74ff907913.jpg",
-          "basePts": 0,
-          "baseGp": 0,
-          "baseReb": 0,
-          "baseAst": 0
-        },
-        {
           "id": "h1pd467b",
           "name": "Jesbel",
           "number": "",
-          "photo": "",
+          "photo": "uploads/7e1490c9f7c8f2b15bd0.jpg",
           "basePts": 25,
           "baseGp": 5
         },
@@ -357,16 +347,6 @@
           "photo": "",
           "basePts": 17,
           "baseGp": 4,
-          "baseReb": 0,
-          "baseAst": 0
-        },
-        {
-          "id": "d19hls58",
-          "name": "Flaco Zurdo",
-          "number": "4",
-          "photo": "",
-          "basePts": 0,
-          "baseGp": 0,
           "baseReb": 0,
           "baseAst": 0
         },
@@ -1224,6 +1204,6 @@
       "stats": []
     }
   ],
-  "rev": 33,
+  "rev": 36,
   "baseThrough": 3
 }
